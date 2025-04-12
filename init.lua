@@ -1006,3 +1006,6 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.opt.termguicolors = false
+vim.opt.background = 'dark' -- or "light" if your terminal is light themed
+vim.cmd 'colorscheme default' -- or another that respects ANSI, like 'elflord' or 'murphy'
