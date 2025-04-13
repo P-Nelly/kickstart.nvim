@@ -167,6 +167,14 @@ vim.opt.confirm = true
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+--------------------------------------------------------------------------------
+-- MY KEYBINDS
+vim.keymap.set('n', '<leader>e', ':Ex<CR>')
+vim.keymap.set('n', '<leader>x', ':w<CR>')
+vim.keymap.set('n', '<leader>z', ':q!<CR>')
+vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
+-- MY KEYBINDS
+--------------------------------------------------------------------------------
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -238,24 +246,24 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
---------------------------------------------------------------------------------
-{
-  "kdheepak/lazygit.nvim",
-  cmd = {
-    "LazyGit",
-    "LazyGitConfig",
-    "LazyGitCurrentFile",
-    "LazyGitFilter",
-    "LazyGitFilterCurrentFile",
+  --------------------------------------------------------------------------------
+  {
+    'kdheepak/lazygit.nvim',
+    cmd = {
+      'LazyGit',
+      'LazyGitConfig',
+      'LazyGitCurrentFile',
+      'LazyGitFilter',
+      'LazyGitFilterCurrentFile',
+    },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    keys = {
+      { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'Open LazyGit' },
+    },
   },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
-  keys = {
-    { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open LazyGit" },
-  },
-},
---------------------------------------------------------------------------------
+  --------------------------------------------------------------------------------
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
