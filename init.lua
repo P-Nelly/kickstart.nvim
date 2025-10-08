@@ -117,9 +117,9 @@ vim.o.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 ---------------------------------------------------------------------------------------
--- vim.schedule(function()
---   vim.o.clipboard = 'unnamedplus'
--- end)
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 ---------------------------------------------------------------------------------------
 
 -- Enable break indent
@@ -909,7 +909,7 @@ require('lazy').setup({
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     ---------------------------------------------------------------------------------------
-    { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+    { 'loctvl842/monokai-pro.nvim', name = 'monokai-pro', priority = 1000 },
     ---------------------------------------------------------------------------------------
   },
 
@@ -1030,6 +1030,6 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 ---------------------------------------------------------------------------------------
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme 'monokai-pro'
 vim.api.nvim_set_keymap('n', '<leader>cd', ':cd %:h<CR>', { noremap = true, silent = true })
 ---------------------------------------------------------------------------------------
